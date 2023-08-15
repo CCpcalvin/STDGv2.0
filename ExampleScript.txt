@@ -1,0 +1,124 @@
+\color_map{
+Even_Gor: cyan, 
+Ben: red
+}
+
+\macro[mission]{
+dialogue[color=green, $opt]{$arg}; 
+function!{execute as @a at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~}
+}
+
+\macro[option_feedback]{
+dialogue[t=2, color=green, $opt]{$arg}; 
+function!{execute as @a at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~}
+}
+
+\reset{
+time set day
+}
+
+\namespace{s1p1}
+
+\function[t=1]{
+gamemode adventure @a
+}
+
+\function[t=2]{
+execute in minecraft:overworld run tp @a -453.80 19.00 38.21 6.68 3.60
+spawnpoint @a -453 19 38
+}
+
+\dialogue{
+Even_Gor: hello. My Name is Spaghetti Even. 
+Ben: ??
+Ryan: hello
+}
+
+\dialogue[color=red]{
+Even_Gor: Wait. What is going on.
+}
+
+\function!{
+summon minecraft:fireball -475 42 74 {Motion:[1.0,-1.0,1.0]}
+}
+
+\option[save=s1p1_obj, reselect=false]{
+s2p2a: [Ask Even_Gor], 
+s2p2b: [Ask Ben], 
+s2p2c: [Ask Ryan], 
+s2p2d: [Investigate the meteor crater alone]
+}
+
+\namespace{s2p2a}
+
+\option_feedback{You have chosen [Ask Even_Gor]}
+
+\dialogue{
+Me: Do you know what happen, Even_Gor?
+}
+
+\dialogue{
+Even_Gor: No
+}
+
+\option[save=s1p1_obj, reselect=false]{
+s2p2a: [Ask Even_Gor], 
+s2p2b: [Ask Ben], 
+s2p2c: [Ask Ryan], 
+s2p2d: [Investigate the meteor crater alone]
+}
+
+\function[t=end]{function s2p3:1}
+
+\namespace{s2p2b}
+
+\option_feedback{You have chosen [Ask Ben]}
+
+\dialogue{
+Me: Do you know what happen, Ben?
+}
+
+\dialogue{
+Ben: No
+}
+
+\option[save=s1p1_obj, reselect=false]{
+s2p2a: [Ask Even_Gor], 
+s2p2b: [Ask Ben], 
+s2p2c: [Ask Ryan], 
+s2p2d: [Investigate the meteor crater alone]
+}
+
+\function[t=end]{function s2p3:1}
+
+\namespace{s2p2c}
+
+\option_feedback{You have chosen [Ask Ryan]}
+
+\dialogue{
+Me: Do you know what happen, Ryan?
+}
+
+\dialogue{
+Ryan: No
+}
+
+\option[save=s1p1_obj, reselect=false]{
+s2p2a: [Ask Even_Gor], 
+s2p2b: [Ask Ben], 
+s2p2c: [Ask Ryan], 
+s2p2d: [Investigate the meteor crater alone]
+}
+
+\function[t=end]{function s2p3:1}
+
+\namespace{s2p2d}
+
+\option_feedback{You have chosen [Investigate the meteor crater alone]}
+
+\function[t=end]{function s2p3:1}
+
+\namespace{s2p3}
+
+\mission{[Find a way to reach meteor crater]}
+
