@@ -1,7 +1,7 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
-- [Principal](#principal)
+- [Principle](#principle)
 - [How to use it](#how-to-use-it)
   - [Syntax of `script.txt`](#syntax-of-scripttxt)
     - [Namespace](#namespace)
@@ -15,7 +15,7 @@
 
 Are you a Minecraft map creator who struggles with converting scripts into datapack commands? Are you tired of manually inputting each dialogue into the tellraw generator and copying the command to the datapack every time? If so, here's the solution! STDG.py (short for Script to Datapack Generator version 2) is a simple Python script that converts dialogue scripts into Minecraft datapacks.
 
-# Principal
+# Principle
 
 The script converts dialogues (or multiple commands) into a chain of function blocks. Each function executes the next function in a queue-like manner. The execution direction follows the pattern `<namespace>:1 -> <namespace>:2 -> <namespace>:3 -> ...`
 
